@@ -1,0 +1,57 @@
+
+  @keyframes transition-topIn {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .search-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    z-index: 999;
+    display: none;
+    border-radius: 10px;
+  }
+
+  .search-bar .form-control {
+    border-radius: 20px;
+  }
+
+  .search-bar.visible {
+    animation: transition-topIn .3s ease-in-out;
+  }
+  
+  .content {
+    margin-top: 70px;
+  }
+
+  .navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.rounded-input {
+    border-radius: 20px; /* Adjust the value as needed */
+  }
+  
+  .rounded-button {
+    border-radius: 20px; /* Adjust the value as needed */
+  }
+  
+  .navbar .form-control {
+    border-radius: 20px; /* Ensure the input field has rounded corners */
+  }
+  
+  .navbar .btn {
+    border-radius: 20px; /* Ensure the button has rounded corners */
+  }
