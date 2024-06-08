@@ -28,5 +28,11 @@
         "Name": "New House",
         "Type": "Apartment",
         "Price": 1200
+      },
+      {
+        "Id": 5,
+        "Name": "New House",
+        "Type": "Apartment",
+        "Price": 1200
       }
 ]
