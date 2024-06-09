@@ -1,0 +1,20 @@
+[class*="col-xs-"] {
+
+    padding: 6px;
+  }
+  
+  [class*="col-sm-"] {
+    padding: 6px;
+  }
+  
+  [class*="col-md-"] {
+    padding: 6px;
+  }
+  
+  [class*="col-lg-"] {
+    padding: 6px;
+  }
+  
+  [class*="col-xl-"] {
+    padding: 6px;
+  }

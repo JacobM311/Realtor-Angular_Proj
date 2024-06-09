@@ -12,9 +12,11 @@ import {
   __spreadProps,
   __spreadValues,
   first,
+  innerFrom,
+  isFunction,
   map,
   noop
-} from "./chunk-FBXCLVNL.js";
+} from "./chunk-6VB2XR5J.js";
 
 // node_modules/@angular/core/fesm2022/primitives/signals.mjs
 function defaultEquals(a, b) {
@@ -799,6 +801,18 @@ var VirtualAction = function(_super) {
   };
   return VirtualAction2;
 }(AsyncAction);
+
+// node_modules/rxjs/dist/esm5/internal/util/isObservable.js
+function isObservable(obj) {
+  return !!obj && (obj instanceof Observable || isFunction(obj.lift) && isFunction(obj.subscribe));
+}
+
+// node_modules/rxjs/dist/esm5/internal/observable/defer.js
+function defer(observableFactory) {
+  return new Observable(function(subscriber) {
+    innerFrom(observableFactory()).subscribe(subscriber);
+  });
+}
 
 // node_modules/rxjs/dist/esm5/internal/observable/never.js
 var NEVER = new Observable(noop);
@@ -21546,6 +21560,8 @@ if (typeof ngDevMode !== "undefined" && ngDevMode) {
 }
 
 export {
+  isObservable,
+  defer,
   XSS_SECURITY_URL,
   RuntimeError,
   formatRuntimeError,
@@ -22042,4 +22058,4 @@ export {
    * found in the LICENSE file at https://angular.io/license
    *)
 */
-//# sourceMappingURL=chunk-O5KLLBY5.js.map
+//# sourceMappingURL=chunk-3N5ESLRF.js.map

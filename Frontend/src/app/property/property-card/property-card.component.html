@@ -1,12 +1,12 @@
-<div class="container px-0">
+<div class="fluid-container px-0">
     <div class="card">
         <div class="img-wrapper">
-            <img class="card-img" src="/assets/Images/House.jpg">
+            <img class="card-img" src="./assets/images/House.jpg">
         </div>
         <div class="card-body">
-            <h1 class="price">{{property.Price | currency: 'USD':'symbol':'1.0-0' }}</h1>
-            <h2 class="type">{{property.Type}}</h2>
-            <h3 class="name">{{property.Name}}</h3>
+            <h1 class="price">{{property.price | currency: 'USD':'symbol':'1.0-0' }}</h1>
+            <h2 class="type">{{property.type}}</h2>
+            <h3 class="name">{{property.name}}</h3>
             <a href="#" class="stretched-link"></a>
         </div>
     </div>

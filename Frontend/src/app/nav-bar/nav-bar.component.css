@@ -41,17 +41,17 @@
 }
 
 .rounded-input {
-    border-radius: 20px; /* Adjust the value as needed */
+    border-radius: 20px;
   }
   
   .rounded-button {
-    border-radius: 20px; /* Adjust the value as needed */
+    border-radius: 20px;
   }
   
   .navbar .form-control {
-    border-radius: 20px; /* Ensure the input field has rounded corners */
+    border-radius: 20px;
   }
   
   .navbar .btn {
-    border-radius: 20px; /* Ensure the button has rounded corners */
+    border-radius: 20px;
   }

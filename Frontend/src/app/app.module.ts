@@ -6,8 +6,15 @@ import { PropertyListComponent } from './property/property-list/property-list.co
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HousingService } from './services/housing.service';
+import { Routes, RouterModule } from "@angular/router"
+import { AddPropertyComponent } from './property/add-property/add-property.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
-
+const appRoutes: Routes = [
+  { path: '', component: LandingPageComponent },
+  { path: 'add-property', component: AddPropertyComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' }
+]
 
 @NgModule({
   declarations: [	
@@ -15,11 +22,14 @@ import { HousingService } from './services/housing.service';
     PropertyCardComponent,
     PropertyListComponent,
     NavBarComponent,
+    AddPropertyComponent,
+    LandingPageComponent,
     
    ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    RouterModule.forRoot(appRoutes),
 
   ],
   providers: [HousingService],

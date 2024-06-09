@@ -1,38 +1,38 @@
 [
     {
-      "Id": 1,
-      "Name": "Brilla",
-      "Type": "House",
-      "Price": 12
+      "id": 1,
+      "name": "Brilla",
+      "type": "House",
+      "price": 12
     },
     {
-      "Id": 2,
-      "Name": "Brilla",
-      "Type": "House",
-      "Price": 1000
+      "id": 2,
+      "name": "Brilla",
+      "type": "House",
+      "price": 1000
     },
     {
-      "Id": 3,
-      "Name": "Brilla House",
-      "Type": "House",
-      "Price": 120000
+      "id": 3,
+      "name": "Brilla House",
+      "type": "House",
+      "price": 120000
     },
     {
-      "Id": 4,
-      "Name": "Brilla House",
-      "Type": "House",
-      "Price": 120000
+      "id": 4,
+      "name": "Brilla House",
+      "type": "House",
+      "price": 120000
     },
     {
-        "Id": 5,
-        "Name": "New House",
-        "Type": "Apartment",
-        "Price": 1200
+        "id": 5,
+        "name": "New House",
+        "type": "Apartment",
+        "price": 1200
       },
       {
-        "Id": 5,
-        "Name": "New House",
-        "Type": "Apartment",
-        "Price": 1200
+        "id": 5,
+        "name": "New House",
+        "type": "Apartment",
+        "price": 1200
       }
 ]
