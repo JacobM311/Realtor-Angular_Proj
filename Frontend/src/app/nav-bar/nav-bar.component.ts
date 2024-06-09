@@ -7,6 +7,8 @@ import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
 })
 export class NavBarComponent implements OnInit, OnDestroy {
 
+  private readonly fixedHeight = 300;
+
   ngOnInit(): void {
     window.addEventListener('scroll', this.onScroll, true);
   }
@@ -17,16 +19,15 @@ export class NavBarComponent implements OnInit, OnDestroy {
 
   onScroll = (): void => {
     const searchBar = document.getElementById('searchBar');
-    const navbarHeight = document.querySelector('.navbar')?.clientHeight || 0;
 
-    if (window.scrollY > navbarHeight && searchBar) 
+    if (window.scrollY > this.fixedHeight && searchBar) 
     {
       searchBar.classList.add('visible');
-      if (searchBar) searchBar.style.display = 'block';
+      searchBar.style.display = 'block';
     } 
-    if (window.scrollY < navbarHeight && searchBar)
+    else if (window.scrollY < this.fixedHeight && searchBar)
     {
-      if (searchBar) searchBar.style.display = 'none';
+      searchBar.style.display = 'none';
     }
   }
 }

@@ -9,29 +9,21 @@
       opacity: 1;
     }
   }
-  
-  .search-bar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
-    z-index: 999;
-    display: none;
-    border-radius: 10px;
+
+  .navbar {
+    z-index: 1000;
   }
 
-  .search-bar .form-control {
-    border-radius: 20px;
+  .navbar .navbar-collapse {
+    margin-top: 4px;
+    width: 100% !important;
   }
 
-  .search-bar.visible {
-    animation: transition-topIn .3s ease-in-out;
-  }
-  
-  .content {
-    margin-top: 70px;
+  .navbar .dropdown-menu {
+    background-color: #ffffff;
+    z-index: 1001;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
   }
 
   .navbar-brand {
@@ -39,19 +31,34 @@
     left: 50%;
     transform: translateX(-50%);
 }
+  
+  .search-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 8.5%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0px 0;
+    z-index: 999;
+    display: none;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
 
-.rounded-input {
+  .button-container {
+    padding: 0px 0;
+    margin: 0px;
+  }
+
+  .form-control {
     border-radius: 20px;
   }
-  
+
+  .rounded-input {
+    border-radius: 20px;
+  }
+
   .rounded-button {
-    border-radius: 20px;
-  }
-  
-  .navbar .form-control {
-    border-radius: 20px;
-  }
-  
-  .navbar .btn {
     border-radius: 20px;
   }

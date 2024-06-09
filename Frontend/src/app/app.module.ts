@@ -12,7 +12,9 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 
 const appRoutes: Routes = [
   { path: '', component: LandingPageComponent },
-  { path: 'add-property', component: AddPropertyComponent },
+  { path: 'sell', component: AddPropertyComponent },
+  { path: 'rent', component: AddPropertyComponent },
+  { path: 'buy', component: AddPropertyComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ]
 
