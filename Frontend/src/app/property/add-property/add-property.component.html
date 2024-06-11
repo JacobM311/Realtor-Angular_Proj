@@ -1,2 +1,52 @@
 <app-nav-bar></app-nav-bar>
-hey
+
+<div class="flex-container">
+  <div class="text-container">
+    <h1>
+      List Your Property On The Top, Completely Real, Realtor Site In Seconds.
+    </h1> 
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      Property Information
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit(Form)" #Form="ngForm">
+
+        <div class="form-group col-12 text-muted">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" #propName="ngModel" ngModel name="propName" required minlength="3">
+          <small *ngIf="propName.errors && propName.errors['required'] && propName.touched" class="error-text">
+            Required
+          </small>
+          <small *ngIf="propName.errors && propName.errors['minlength'] && propName.touched" class="error-text">
+            Invalid name
+          </small>
+        </div>
+
+        <div class="form-group col-12 text-muted">
+          <label for="type">Type</label>
+          <input type="text" class="form-control" #propType="ngModel" name="propType" ngModel required>
+          <small *ngIf="propType.errors && propType.errors['required'] && propType.touched" class="error-text">
+            Required
+          </small>
+        </div>
+
+        <div class="form-group col-12 text-muted">
+          <label for="price">Price</label>
+          <input type="text" class="form-control" #propPrice="ngModel" name="propPrice" ngModel required>
+          <small *ngIf="propPrice.errors && propPrice.errors['required'] && propPrice.touched" class="error-text">
+            Required
+          </small>
+        </div>
+
+        <div class="form-group col-12">
+          <button [disabled]="!Form.valid" type="submit" class="btn btn-light me-2 mt-3">Save</button>
+          <button type="reset" class="btn btn-light mt-3">Cancel</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

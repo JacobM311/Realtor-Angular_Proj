@@ -5,9 +5,11 @@ import { Observable } from 'rxjs';
 
 export interface Property {
   id: number;
+  sellrent: number;
   name: string;
   type: string;
-  price: number; 
+  price: number;
+  image?: string;
 }
 
 @Injectable({
@@ -15,24 +17,19 @@ export interface Property {
 })
 export class HousingService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getAllProperties(): Observable<Property[]> 
-  {
+  getAllProperties(SellRent: number): Observable<Property[]> {
     return this.http.get<{ [key: string]: Property }>('data/properties.json').pipe(
-        map(data=>{
-          const propertiesArray: Property[] = [];
-          for (const id in data) 
-          {
-            if (data.hasOwnProperty(id))
-            {
-              propertiesArray.push(data[id]);
-            }
+      map(data => {
+        const propertiesArray: Property[] = [];
+        for (const id in data) {
+          if (data.hasOwnProperty(id) && data[id].sellrent === SellRent) {
+            propertiesArray.push(data[id]);
           }
-          return propertiesArray;
         }
-
-      )
+        return propertiesArray;
+      })
     );
   }
 }

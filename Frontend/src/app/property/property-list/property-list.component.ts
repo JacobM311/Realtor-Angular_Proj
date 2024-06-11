@@ -1,28 +1,37 @@
 import { Component, OnInit } from '@angular/core';
-import { HousingService } from '../../services/housing.service';
-import { Property } from '../../services/housing.service';
+import { ActivatedRoute } from '@angular/router';
+import { HousingService, Property } from '../../services/housing.service';
 
 @Component({
   selector: 'app-property-list',
   templateUrl: './property-list.component.html',
-  styleUrl: './property-list.component.css'
+  styleUrls: ['./property-list.component.css']
 })
-export class PropertyListComponent implements OnInit{
+export class PropertyListComponent implements OnInit {
 
   properties: Property[] = [];
+  SellRent = 1;
 
-  constructor(private housingService: HousingService) {}
+  constructor(private route: ActivatedRoute, private housingService: HousingService) {}
 
   ngOnInit(): void {
+    // Determine SellRent based on the current route
+    const routePath = this.route.snapshot.url.toString();
+    if (routePath.includes('rent')) {
+      this.SellRent = 2;
+    } else if (routePath.includes('buy')) {
+      this.SellRent = 1;
+    }
 
-    this.housingService.getAllProperties().subscribe(
-      data=>{
-        this.properties=data;
+    // Fetch properties based on SellRent value
+    this.housingService.getAllProperties(this.SellRent).subscribe(
+      data => {
+        this.properties = data;
+        console.log('Route inside subscription:', routePath);
       },
-
-      error=>{
-        console.log('httperror');
+      error => {
+        console.log('HTTP error', error);
       }
-    )
+    );
   }
 }

@@ -72,6 +72,14 @@ html, body {
     padding: 20px;
   }
 
+  .rounded-input {
+    border-radius: 20px;
+  }
+
+  .rounded-button {
+    border-radius: 20px;
+  }
+
   @media (min-width: 992px) and (max-width: 1199.98px) {
     .parallax {
       height: 100%;
@@ -114,5 +122,13 @@ html, body {
     }
     .parallax-text {
         top: 135px;
+    }
+    .parallax-text h1 {
+        font-size: 2rem;
+    }
+    .search-bar {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
     }
   }

@@ -1,38 +1,50 @@
 [
     {
       "id": 1,
+      "sellrent": 1,
       "name": "Brilla",
       "type": "House",
-      "price": 12
+      "price": 12,
+      "image": "neighborhood"
     },
     {
       "id": 2,
+      "sellrent": 1,
       "name": "Brilla",
       "type": "House",
-      "price": 1000
+      "price": 1000,
+      "image": "neighborhood"
     },
     {
       "id": 3,
+      "sellrent": 1,
       "name": "Brilla House",
       "type": "House",
-      "price": 120000
+      "price": 120000,
+      "image": "neighborhood"
     },
     {
       "id": 4,
+      "sellrent": 1,
       "name": "Brilla House",
       "type": "House",
-      "price": 120000
+      "price": 120000,
+      "image": "neighborhood"
     },
     {
-        "id": 5,
-        "name": "New House",
-        "type": "Apartment",
-        "price": 1200
-      },
-      {
-        "id": 5,
-        "name": "New House",
-        "type": "Apartment",
-        "price": 1200
-      }
+      "id": 5,
+      "sellrent": 2,
+      "name": "New House",
+      "type": "Apartment",
+      "price": 1200,
+      "image": "neighborhood"
+    },
+    {
+      "id": 5,
+      "sellrent": 1,
+      "name": "New House",
+      "type": "Apartment",
+      "price": 1200,
+      "image": "neighborhood"
+    }
 ]

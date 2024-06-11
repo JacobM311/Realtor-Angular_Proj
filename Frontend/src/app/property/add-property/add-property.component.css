@@ -1,0 +1,53 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 90vh; /* Make the container take up the full viewport height */
+    padding-top: 100px; /* Add padding to ensure content is not right at the edges */
+    padding-left: 20px;
+    padding-right: 50px;
+  }
+  
+  .text-container {
+    width: 500px;
+    height: auto;
+
+  }
+  
+  .text-container h1 {
+    font-size: 45px;
+    color: rgba(38, 128, 201, 0.854);
+    text-align: left;
+  }
+  
+  .card {
+
+    margin-left: 20px; /* Add margin to separate from the text container */
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-start;
+  }
+  
+  .card-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-group {
+    padding-bottom: 20px;
+  }
+
+  .ng-invalid.ng-touched {
+    border-color: red;
+  }
+
+  .error-text {
+    color: red;
+  }

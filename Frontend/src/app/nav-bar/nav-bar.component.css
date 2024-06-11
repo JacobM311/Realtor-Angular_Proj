@@ -36,18 +36,22 @@
     position: fixed;
     top: 0;
     width: 100%;
-    height: 8.5%;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 0px 0;
+    padding: 4px 0;
     z-index: 999;
     display: none;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
   }
 
+  .search-bar.animate {
+    animation: transition-topIn 0.3s ease-in-out;
+  }
+
   .button-container {
-    padding: 0px 0;
+    padding-bottom: 3px;
+    padding-top: 0px;
     margin: 0px;
   }
 
@@ -61,4 +65,72 @@
 
   .rounded-button {
     border-radius: 20px;
+  }
+
+  .navbar-nav .nav-link img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .modal-header .btn-close {
+    margin: -1rem -1rem -1rem auto;
+  }
+
+  #loginModal .modal-content {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  #loginModal .modal-header {
+    background-color: rgba(38, 128, 201, 0.854);
+    color: #fff;
+    border-bottom: none;
+    padding: 20px;
+  }
+  
+  #loginModal .modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  #loginModal .btn-close {
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+  }
+  
+  #loginModal .modal-body {
+    padding: 30px;
+  }
+  
+  #loginModal .form-label {
+    font-weight: bold;
+    color: rgba(38, 128, 201, 0.854);
+  }
+  
+  #loginModal .form-control {
+    border: 1px solid rgba(38, 128, 201, 0.854);
+    border-radius: 5px;
+  }
+  
+  #loginModal .btn-primary {
+    background-color: rgba(38, 128, 201, 0.854);
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #loginModal .btn-primary:hover {
+    background-color: rgba(38, 128, 201, 1);
+  }
+  
+  .modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out;
+    transform: translate(0, -50%);
+  }
+  
+  .modal.show .modal-dialog {
+    transform: translate(0, 0);
   }

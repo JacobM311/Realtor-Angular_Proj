@@ -1,13 +1,14 @@
 <div class="fluid-container px-0">
     <div class="card">
         <div class="img-wrapper">
-            <img class="card-img" src="./assets/images/House.jpg">
+            <img *ngIf="property.image" class="card-img" src="./assets/images/{{property.image}}.jpg">
+            <img *ngIf="!property.image" class="card-img" src="./assets/images/House.jpg">
         </div>
         <div class="card-body">
             <h1 class="price">{{property.price | currency: 'USD':'symbol':'1.0-0' }}</h1>
             <h2 class="type">{{property.type}}</h2>
             <h3 class="name">{{property.name}}</h3>
-            <a href="#" class="stretched-link"></a>
+            <a class="stretched-link nav-link" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="/property-detail/{{property.id}}"></a>
         </div>
     </div>
 </div>
