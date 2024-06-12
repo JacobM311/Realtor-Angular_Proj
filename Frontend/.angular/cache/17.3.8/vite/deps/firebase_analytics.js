@@ -15,10 +15,10 @@ import {
   openDB,
   registerVersion,
   validateIndexedDBOpenable
-} from "./chunk-3QQ6FMGU.js";
+} from "./chunk-64R5B2CG.js";
 import {
   __async
-} from "./chunk-J4B6MK7R.js";
+} from "./chunk-LJ4VCL4A.js";
 
 // node_modules/@firebase/installations/dist/esm/index.esm2017.js
 var name = "@firebase/installations";

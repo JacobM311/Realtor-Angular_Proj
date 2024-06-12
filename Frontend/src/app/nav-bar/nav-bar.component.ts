@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -6,13 +7,29 @@ import { NgForm } from '@angular/forms';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']
 })
+
 export class NavBarComponent implements OnInit, OnDestroy {
 
   @ViewChild('loginForm') loginForm!: NgForm;
+  formSubmitted = false;
 
   onLoginSubmit(form: NgForm) {
     if (form.valid) {
-      console.log('Login Form Data:', form.value);
+      const email = form.value.email;
+      const password = form.value.password;
+
+      const auth = getAuth();
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+          console.log('User created:', user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.error('Error:', errorCode, errorMessage);
+        });
     }
   }
 
@@ -20,6 +37,7 @@ export class NavBarComponent implements OnInit, OnDestroy {
     if (this.loginForm) {
       this.loginForm.resetForm();
     }
+    this.formSubmitted = false;
   }
 
   private readonly fixedHeight = 307;

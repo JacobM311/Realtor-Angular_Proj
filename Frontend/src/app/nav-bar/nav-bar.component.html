@@ -1,6 +1,6 @@
 <nav class="navbar navbar-light navbar-expand-lg bg-body-tertiary bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="/buy">Home's</a>
+    <a class="navbar-brand" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="">Home's</a>
     
     <button class="navbar-toggler order-1 order-lg-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -33,26 +33,38 @@
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
+
       <div class="modal-header">
         <h5 class="modal-title" id="loginModalLabel">Login or create an account</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+
       <div class="modal-body">
+
         <form (ngSubmit)="onLoginSubmit(loginForm)" #loginForm="ngForm">
+
           <div class="mb-3">
-            <label for="email" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="email" name="email" ngModel required email>
-            <div *ngIf="loginForm.controls['email']?.invalid && (loginForm.controls['email']?.dirty || loginForm.controls['email']?.touched)" class="text-danger">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email" ngModel required email>
+            <div *ngIf="formSubmitted && loginForm.controls['email']?.invalid" class="text-danger">
               <div *ngIf="loginForm.controls['email']?.errors?.['required']">Email is required.</div>
               <div *ngIf="loginForm.controls['email']?.errors?.['email']">Invalid email address.</div>
             </div>
           </div>
-          <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" name="password" ngModel required>
+
+          <div class="mb-5">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" ngModel required minlength="6" #password="ngModel">
+            <div *ngIf="formSubmitted && password.invalid" class="text-danger">
+              <div *ngIf="password.errors?.['required']">Password is required.</div>
+              <div *ngIf="password.errors?.['minlength']">Password must be at least 6 characters long.</div>
+            </div>
           </div>
-          <button type="submit" class="btn btn-primary w-100" [disabled]="!loginForm.valid">Login</button>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary w-50" [disabled]="!loginForm.valid">Login</button>
+          </div>
+        
         </form>
+
       </div>
     </div>
   </div>

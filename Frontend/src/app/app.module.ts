@@ -5,14 +5,14 @@ import { PropertyCardComponent } from './property/property-card/property-card.co
 import { PropertyListComponent } from './property/property-list/property-list.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HttpClientModule } from '@angular/common/http';
-import { HousingService } from './services/housing.service';
+import { HousingService } from './services/housing-service/housing.service';
 import { Routes, RouterModule } from '@angular/router';
 import { AddPropertyComponent } from './property/add-property/add-property.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { PropertyDetailComponent } from './property/property-detail/property-detail.component';
 import { FormsModule } from '@angular/forms';
-import { environment } from '../environments/environment';
 import { initializeApp } from 'firebase/app';
+import { getAuth } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
 
 
@@ -38,6 +38,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 const analytics = getAnalytics(app);
 
 @NgModule({

@@ -5,7 +5,7 @@
       "name": "Brilla",
       "type": "House",
       "price": 12,
-      "image": "prop-1"
+      "image": "neighborhood"
     },
     {
       "id": 2,
@@ -13,7 +13,7 @@
       "name": "Brilla",
       "type": "House",
       "price": 1000,
-      "image": "prop-1"
+      "image": "neighborhood"
     },
     {
       "id": 3,
@@ -21,7 +21,7 @@
       "name": "Brilla House",
       "type": "House",
       "price": 120000,
-      "image": "prop-1"
+      "image": "neighborhood"
     },
     {
       "id": 4,
@@ -29,7 +29,7 @@
       "name": "Brilla House",
       "type": "House",
       "price": 120000,
-      "image": "prop-1"
+      "image": "neighborhood"
     },
     {
       "id": 5,
@@ -37,7 +37,7 @@
       "name": "New House",
       "type": "Apartment",
       "price": 1200,
-      "image": "prop-1"
+      "image": "neighborhood"
     },
     {
       "id": 5,

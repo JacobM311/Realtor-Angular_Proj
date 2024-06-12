@@ -127,8 +127,12 @@ html, body {
         font-size: 2rem;
     }
     .search-bar {
-        width: 100%;
         padding-left: 20px;
         padding-right: 20px;
+        height: 33px;
+        top: 60%;
+    }
+    .rounded-button {
+        font-size: 13px;
     }
   }
