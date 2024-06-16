@@ -135,3 +135,8 @@
   .modal.show .modal-dialog {
     transform: translate(0, 0);
   }
+
+ .password-text {
+  font-size: 15px;
+  padding-left: 15px;
+ }

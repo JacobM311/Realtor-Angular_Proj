@@ -14,6 +14,9 @@ import { FormsModule } from '@angular/forms';
 import { initializeApp } from 'firebase/app';
 import { getAuth } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
+import { MaterialModule } from './material-module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 
 const appRoutes: Routes = [
@@ -42,20 +45,23 @@ const auth = getAuth(app);
 const analytics = getAnalytics(app);
 
 @NgModule({
-  declarations: [		
+  declarations: [				
     AppComponent,
     PropertyCardComponent,
     PropertyListComponent,
     NavBarComponent,
     AddPropertyComponent,
     LandingPageComponent,
-    PropertyDetailComponent
-  ],
+    PropertyDetailComponent,
+    SearchBarComponent,
+   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
 
   ],
   providers: [HousingService],

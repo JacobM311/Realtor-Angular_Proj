@@ -40,8 +40,8 @@
       "image": "neighborhood"
     },
     {
-      "id": 5,
-      "sellrent": 1,
+      "id": 6,
+      "sellrent": 2,
       "name": "New House",
       "type": "Apartment",
       "price": 1200,

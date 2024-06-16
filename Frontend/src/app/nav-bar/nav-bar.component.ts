@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit, OnDestroy, ViewChild } from '@angular/
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { NgForm } from '@angular/forms';
 
+
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -11,7 +12,21 @@ import { NgForm } from '@angular/forms';
 export class NavBarComponent implements OnInit, OnDestroy {
 
   @ViewChild('loginForm') loginForm!: NgForm;
-  formSubmitted = false;
+  formSubmitted: boolean = false;
+
+  onPasswordChange(password: any): void {
+    const passwordValue = password.value;
+    const hasUpperCase = /[A-Z]/.test(passwordValue);
+    const hasLowerCase = /[a-z]/.test(passwordValue);
+    const hasNumbers = /[0-9]/.test(passwordValue);
+    const hasSpecialCharacters = /[!@#$%^&*]/.test(passwordValue);
+
+    if (!hasUpperCase || !hasLowerCase || !hasNumbers || !hasSpecialCharacters) {
+      password.control.setErrors({ invalidPassword: true });
+    } else {
+      password.control.setErrors(null);
+    }
+  }
 
   onLoginSubmit(form: NgForm) {
     if (form.valid) {
@@ -70,6 +85,4 @@ export class NavBarComponent implements OnInit, OnDestroy {
       searchBar.style.display = 'none';
     }
   }
-
-  
 }

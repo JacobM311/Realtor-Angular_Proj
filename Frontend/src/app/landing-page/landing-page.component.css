@@ -8,7 +8,7 @@ html, body {
   
   .parallax-container {
     position: relative;
-    height: 50vh;
+    height: 500px;
     overflow: hidden;
     margin-bottom: 40px;
   }
@@ -46,21 +46,10 @@ html, body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle, transparent 60%, rgba(0, 0, 0, 0.5));
+    background: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.5));
     pointer-events: none;
   }
 
-  .search-bar {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-    z-index: 1001;
-    width: 450px;
-  }
-  
   .parallax-text h1 {
     font-size: 3.5rem;
     margin: 0;
@@ -72,12 +61,56 @@ html, body {
     padding: 20px;
   }
 
+  .search-bar {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 1001;
+    width: 60%;
+  }
+
+  .search-bar .form-control {
+    flex-grow: 1;
+  }
+  
+  .search-bar .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid #31c1ff;
+    color: #717376;
+  }
+  
+  .search-bar .btn:hover {
+    border-color: #343a40;
+  }
+  
+  .search-bar .btn mat-icon {
+    font-size: inherit + 1em;
+  }
+
   .rounded-input {
-    border-radius: 20px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
   }
 
   .rounded-button {
-    border-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    width: 70px;
+    outline: 10px;
+  }
+
+  @media (min-width: 1200px) {
+    .search-bar {
+      width: 40%;
+    }
   }
 
   @media (min-width: 992px) and (max-width: 1199.98px) {
@@ -85,10 +118,13 @@ html, body {
       height: 100%;
     }
     .parallax-container {
-      height: 50vh;
+      height: 460px;
     }
     .parallax-text {
         top: 200px;
+    }
+    .search-bar {
+      width: 50%;
     }
   }
   
@@ -97,10 +133,13 @@ html, body {
       height: 90%;
     }
     .parallax-container {
-      height: 50vh;
+      height: 460px;
     }
     .parallax-text {
         top: 170px;
+    }
+    .search-bar {
+      width: 50%;
     }
   }
   
@@ -109,7 +148,7 @@ html, body {
         height: 80%;
       }
     .parallax-container {
-      height: 50vh;
+      height: 450px;
     }
     .parallax-text {
         top: 170px;
@@ -118,7 +157,7 @@ html, body {
   
   @media (max-width: 575.98px) {
     .parallax-container {
-      height: 40vh;
+      height: 370px;
     }
     .parallax-text {
         top: 135px;
@@ -127,10 +166,10 @@ html, body {
         font-size: 2rem;
     }
     .search-bar {
-        padding-left: 20px;
-        padding-right: 20px;
-        height: 33px;
+        width: 100%;
         top: 60%;
+        padding-left: 25px;
+        padding-right: 25px;
     }
     .rounded-button {
         font-size: 13px;

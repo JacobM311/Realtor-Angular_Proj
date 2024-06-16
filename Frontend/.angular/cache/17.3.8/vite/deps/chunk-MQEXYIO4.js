@@ -4354,10 +4354,14 @@ export {
   ConnectableObservable,
   Subject,
   BehaviorSubject,
+  ReplaySubject,
   AsyncAction,
   AsyncScheduler,
   EMPTY,
   popResultSelector,
+  popScheduler,
+  popNumber,
+  isArrayLike,
   innerFrom,
   observeOn,
   subscribeOn,
@@ -4375,6 +4379,7 @@ export {
   mergeAll,
   concatAll,
   concat2 as concat,
+  timer,
   filter,
   audit,
   auditTime,
@@ -4481,4 +4486,4 @@ export {
   partition,
   race
 };
-//# sourceMappingURL=chunk-XDIJK7GA.js.map
+//# sourceMappingURL=chunk-MQEXYIO4.js.map

@@ -44,20 +44,22 @@
         <form (ngSubmit)="onLoginSubmit(loginForm)" #loginForm="ngForm">
 
           <div class="mb-3">
-            <input type="email" class="form-control" id="email" name="email" placeholder="Email" ngModel required email>
-            <div *ngIf="formSubmitted && loginForm.controls['email']?.invalid" class="text-danger">
+            <input type="email" class="form-control" name="email" placeholder="Email" ngModel required email>
+              <div *ngIf="formSubmitted && loginForm.controls['email']?.invalid" class="text-danger">
               <div *ngIf="loginForm.controls['email']?.errors?.['required']">Email is required.</div>
               <div *ngIf="loginForm.controls['email']?.errors?.['email']">Invalid email address.</div>
             </div>
           </div>
 
-          <div class="mb-5">
-            <input type="password" class="form-control" id="password" name="password" placeholder="Password" ngModel required minlength="6" #password="ngModel">
-            <div *ngIf="formSubmitted && password.invalid" class="text-danger">
-              <div *ngIf="password.errors?.['required']">Password is required.</div>
-              <div *ngIf="password.errors?.['minlength']">Password must be at least 6 characters long.</div>
+          <div>
+            <input type="password" class="form-control" name="password" placeholder="Password" ngModel required minlength="8" #password="ngModel" (input)="onPasswordChange(password)">
+            <div *ngIf="formSubmitted && (password.invalid || password.errors?.['invalidPassword'])" class="text-danger">
+              <div *ngIf="password.errors?.['required']"></div>
+              <div *ngIf="password.errors?.['minlength']"></div>
+              <div *ngIf="password.errors?.['invalidPassword']"></div>
             </div>
           </div>
+          <p class="mb-5 password-text">Use 8 or more characters with a combination of uppercase, lowercase, a number, and a symbol.</p>
 
           <div class="text-center">
             <button type="submit" class="btn btn-primary w-50" [disabled]="!loginForm.valid">Login</button>
